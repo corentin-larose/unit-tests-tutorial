@@ -35,7 +35,9 @@ Testing abstract classes
 
 Generating fixtures
 ------------
+```console
 mysqldump --xml -t qapa_development_test > /media/localhost/qapa-commons/tests/QapaTest/_files/skills-fixture.xml
+```
 
 Code coverage
 ------------
