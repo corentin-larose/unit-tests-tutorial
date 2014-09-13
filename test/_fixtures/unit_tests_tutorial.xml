@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<database name="test">
+	<table_data name="unit_tests_tutorial">
+	<row>
+		<field name="prime_number">2</field>
+	</row>
+	<row>
+		<field name="prime_number">3</field>
+	</row>
+	<row>
+		<field name="prime_number">5</field>
+	</row>
+	<row>
+		<field name="prime_number">7</field>
+	</row>
+	<row>
+		<field name="prime_number">11</field>
+	</row>
+	<row>
+		<field name="prime_number">13</field>
+	</row>
+	<row>
+		<field name="prime_number">17</field>
+	</row>
+	<row>
+		<field name="prime_number">19</field>
+	</row>
+	<row>
+		<field name="prime_number">23</field>
+	</row>
+	<row>
+		<field name="prime_number">29</field>
+	</row>
+	</table_data>
+</database>
+</mysqldump>
