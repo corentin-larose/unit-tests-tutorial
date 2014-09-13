@@ -1,5 +1,5 @@
 <?php
-namespace CL\UnitTestingTutorialtest;
+namespace CL\UnitTestingTutorialTest;
 
 error_reporting(-1);
 chdir(__DIR__);

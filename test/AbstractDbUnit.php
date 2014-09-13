@@ -1,5 +1,5 @@
 <?php
-namespace CL\UnitTestingTutorialtest;
+namespace CL\UnitTestingTutorialTest;
 
 abstract class AbstractDbUnit extends \PHPUnit_Extensions_Database_TestCase
 {

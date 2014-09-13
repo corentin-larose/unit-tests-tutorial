@@ -1,5 +1,5 @@
 <?php
-namespace CL\UnitTestingTutorialtest;
+namespace CL\UnitTestingTutorialTest;
 
 use CL\UnitTestingTutorial\PrimeNumbers;
 
