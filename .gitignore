@@ -1,6 +1,7 @@
 .buildpath
-bin/
-composer.lock
 .project
 .settings/
+bin/
+composer.lock
+phpunit.xml.dist
 vendor/

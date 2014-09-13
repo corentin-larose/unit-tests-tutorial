@@ -17,4 +17,14 @@ class Maths
 
         return (float) ($dividend / $denominator);
     }
+
+    /**
+     * @param numeric $a
+     * @param numeric $b
+     * @return numeric
+     */
+    public function multiply($a, $b)
+    {
+    	return $a * $b;
+    }
 }

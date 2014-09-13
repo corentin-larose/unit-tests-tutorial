@@ -4,7 +4,7 @@ namespace CL\UnitTestingTutorialTest;
 abstract class AbstractDbUnit extends \PHPUnit_Extensions_Database_TestCase
 {
     /**
-     * @var PHPUnit_Extensions_Database_DB_DefaultDatabaseConnection
+     * @var \PHPUnit_Extensions_Database_DB_DefaultDatabaseConnection
      */
     private $conn = null;
 
@@ -13,6 +13,9 @@ abstract class AbstractDbUnit extends \PHPUnit_Extensions_Database_TestCase
      */
     protected static $fixtures = [];
 
+    /**
+     * @var \PDO
+     */
     private static $pdo = null;
 
     /**

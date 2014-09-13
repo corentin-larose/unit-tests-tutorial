@@ -28,6 +28,11 @@ class MathsTest extends \PHPUnit_Framework_TestCase
         $this->instance = new Maths();
     }
 
+    public function tearDown()
+    {
+    	$this->instance = null;
+    }
+
     /**
      * @covers \CL\UnitTestingTutorial\Maths::divide()
      * @dataProvider divideDataProvider
@@ -46,5 +51,10 @@ class MathsTest extends \PHPUnit_Framework_TestCase
 
         $this->assertInternalType('float', $actualQuotient);
         $this->assertSame($expected, $actualQuotient);
+    }
+
+    public function testMultiply()
+    {
+        $this->markTestIncomplete();
     }
 }

@@ -26,6 +26,11 @@ class PrimeNumbersTest extends AbstractDbUnit
         $this->instance->setDbAdapter($this->getConnection()->getConnection());
     }
 
+    public function tearDown()
+    {
+    	$this->instance = null;
+    }
+
     /**
      * @covers \CL\UnitTestingTutorial\PrimeNumbers::getGreatestKnown()
      */
