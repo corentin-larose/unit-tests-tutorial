@@ -1,4 +1,5 @@
 .buildpath
+bin/
 composer.lock
 .project
 .settings/
