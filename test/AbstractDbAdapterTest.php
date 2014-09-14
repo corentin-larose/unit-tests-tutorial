@@ -15,6 +15,14 @@ class AbstractDbAdapterTest extends \PHPUnit_Framework_TestCase
         $this->instance = new Wrapper();
     }
 
+    public function testClassImplementsDbAdapterInterface()
+    {
+    	$this->assertInstanceOf('\CL\UnitTestingTutorial\DbAdapterInterface', $this->instance);
+    }
+
+    /**
+     * @depends testClassImplementsDbAdapterInterface
+     */
     public function testSetDbAdapter()
     {
         $adapter = 'test';
