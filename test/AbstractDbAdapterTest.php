@@ -10,6 +10,15 @@ class AbstractDbAdapterTest extends \PHPUnit_Framework_TestCase
      */
     protected $instance;
 
+    protected static function getMethod($class, $method)
+    {
+        $class = new \ReflectionClass($class);
+        $method = $class->getMethod($method);
+        $method->setAccessible(true);
+
+        return $method;
+    }
+
     public function setUp()
     {
         $this->instance = new Wrapper();
@@ -24,6 +33,13 @@ class AbstractDbAdapterTest extends \PHPUnit_Framework_TestCase
     {
     	$actual = $this->instance->foo('test', 'ok');
     	$this->assertSame('test ok', $actual);
+    }
+
+    public function testFoo2()
+    {
+        $method = self::getMethod(get_class($this->instance), 'foo');
+        $actual = $method->invokeArgs($this->instance, ['test', 'ok']);
+        $this->assertSame('test ok', $actual);
     }
 
     /**
