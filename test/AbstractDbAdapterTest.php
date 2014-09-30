@@ -20,6 +20,12 @@ class AbstractDbAdapterTest extends \PHPUnit_Framework_TestCase
     	$this->assertInstanceOf('\CL\UnitTestingTutorial\DbAdapterInterface', $this->instance);
     }
 
+    public function testFoo()
+    {
+    	$actual = $this->instance->foo('test', 'ok');
+    	$this->assertSame('test ok', $actual);
+    }
+
     /**
      * @depends testClassImplementsDbAdapterInterface
      */
@@ -35,6 +41,11 @@ class AbstractDbAdapterTest extends \PHPUnit_Framework_TestCase
 
 class Wrapper extends AbstractDbAdapter
 {
+    public function __call($method, $args)
+    {
+        return call_user_func_array([$this, $method], $args);
+    }
+
     public function getDbAdapter()
     {
         return $this->dbAdapter;
