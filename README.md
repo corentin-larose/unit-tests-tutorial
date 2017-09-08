@@ -33,10 +33,10 @@ Accessing protected and private properties
 Testing abstract classes
 ------------
 
-Generating fixtures
+Generating MySql fixtures
 ------------
 ```console
-mysqldump --xml -t qapa_development_test > /media/localhost/qapa-commons/tests/QapaTest/_files/skills-fixture.xml
+mysqldump --xml -t test > /path/to/test/_fixtures/unit_test_tutorial.xml
 ```
 
 Code coverage

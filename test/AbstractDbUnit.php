@@ -29,6 +29,8 @@ abstract class AbstractDbUnit extends \PHPUnit_Extensions_Database_TestCase
                 self::$pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
             }
             $this->conn = $this->createDefaultDBConnection(self::$pdo, $GLOBALS['DB_DBNAME']);
+            
+            // TODO: create database
         }
 
         return $this->conn;

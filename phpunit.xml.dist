@@ -10,7 +10,6 @@
 
         <var name="DB_DBNAME" value="test" />
         <var name="DB_DSN" value="mysql:dbname=test;host=localhost" />
-        <var name="DB_HOSTNAME" value="localhost" />
         <var name="DB_PASSWORD" value="root" />
         <var name="DB_USER" value="root" />
     </php>
