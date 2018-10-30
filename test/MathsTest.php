@@ -102,6 +102,7 @@ class MathsTest extends TestCase
     }
 
     /**
+     * @coversNothing
      * @expectedException \PHPUnit\Framework\Error\Warning
      */
     public function testPhpWarningOnDivisionByZero()
