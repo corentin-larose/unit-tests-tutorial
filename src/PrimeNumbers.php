@@ -7,6 +7,14 @@ class PrimeNumbers extends AbstractDbAdapter
     /**
      * @return integer
      */
+    public function displayFirstPrimeNumber(): int
+    {
+        echo 1;
+    }
+
+    /**
+     * @return integer
+     */
     public function getGreatestKnown(): int
     {
         $stmt = $this->dbAdapter

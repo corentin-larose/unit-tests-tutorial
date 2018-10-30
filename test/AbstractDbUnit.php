@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace CL\UnitTestingTutorialTest;
 
 use PHPUnit\DbUnit\DataSet\CompositeDataSet;
@@ -28,10 +31,17 @@ abstract class AbstractDbUnit extends TestCase
     {
         if (null === $this->conn) {
             if (null === self::$pdo) {
-                self::$pdo = new \PDO($GLOBALS['DB_DSN'], $GLOBALS['DB_USER'], $GLOBALS['DB_PASSWORD']);
-                self::$pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+                self::$pdo = new \PDO(
+                    $GLOBALS['DB_DSN'], $GLOBALS['DB_USER'],
+                    $GLOBALS['DB_PASSWORD']
+                );
+                self::$pdo->setAttribute(
+                    \PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION
+                );
             }
-            $this->conn = $this->createDefaultDBConnection(self::$pdo, $GLOBALS['DB_DBNAME']);
+            $this->conn = $this->createDefaultDBConnection(
+                self::$pdo, $GLOBALS['DB_DBNAME']
+            );
 
             // TODO: create database
         }
@@ -47,7 +57,9 @@ abstract class AbstractDbUnit extends TestCase
         $datasets = [];
 
         foreach (static::$fixtures as $fixture) {
-            $datasets[] = $this->createMySQLXMLDataSet($GLOBALS['DB_FIXTURES_DIR'] . $fixture);
+            $datasets[] = $this->createMySQLXMLDataSet(
+                $GLOBALS['DB_FIXTURES_DIR'] . $fixture
+            );
         }
 
         $compositeDataSet = new CompositeDataSet($datasets);

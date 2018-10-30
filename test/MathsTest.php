@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace CL\UnitTestingTutorialTest;
 
 use CL\UnitTestingTutorial\Maths;
@@ -17,10 +20,22 @@ class MathsTest extends TestCase
      */
     public function divideDataProvider()
     {
-        return array(
-            array(1, 3, 1/3),
-            array(9, 3, 3.0),
-        );
+        return [
+            [9, 3, 3.0],
+            [1, 3, 1 / 3],
+            'scientific_notation' => [1.2e3, 3, 1.2e3 / 3],
+        ];
+    }
+    /**
+     * @see multiplyTest
+     * @return ArrayIterator
+     */
+    public function multiplyDataProvider()
+    {
+        return new \ArrayIterator([
+            [3, 3, 9],
+            'scientific_notation' => [1.2e3, 3, 1.2e3 * 3],
+        ]);
     }
 
     public function setUp()
@@ -58,9 +73,32 @@ class MathsTest extends TestCase
         $this->instance->divide(3, 0);
     }
 
-    public function testMultiply()
+
+    public function testDivideThrowsInvalidArgumentExceptionOnDivisionByZeroAnotherWay()
+    {
+        $this->expectException(\InvalidArgumentException::class);
+        $this->instance->divide(3, 0);
+    }
+
+    public function testincompleteTest()
     {
         $this->markTestIncomplete();
+    }
+
+    /**
+     * @covers \CL\UnitTestingTutorial\Maths::multiply()
+     * @dataProvider multiplyDataProvider
+     *
+     * @param integer $multiplier
+     * @param integer $multiplicand
+     * @param integer $expectedProduct
+     */
+    public function testMultiply($multiplier, $multiplicand, $expectedProduct)
+    {
+        $actualProduct = $this->instance->multiply($multiplier, $multiplicand);
+
+        $this->assertInternalType('numeric', $actualProduct);
+        $this->assertSame($expectedProduct, $actualProduct);
     }
 
     /**

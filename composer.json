@@ -1,28 +1,31 @@
 {
-	"name" : "corentin-larose/unit-tests-tutorial",
-	"description" : "A tutorial on Unit Testing",
-	"autoload" : {
-		"psr-4" : {
-			"CL\\UnitTestingTutorial\\" : "src/",
-			"CL\\UnitTestingTutorialTest\\" : "test/"
-		}
-	},
-	"config" : {
-		"bin-dir" : "bin",
-		"process-timeout" : 3600
-	},
-	"keywords" : [
-		"Unit testing",
-		"PhpUnit",
-		"DbUnit"
-	],
-	"require" : {
-		"php" : ">=7.1",
-		"ext-pdo" : "*"
-		"ext-pdo_mysql" : "*"
-	},
-	"require-dev" : {
-		"phpunit/phpunit" : "7.*",
-		"phpunit/dbunit" : "4.*"
-	}
+  "name": "corentin-larose/unit-tests-tutorial",
+  "description": "A tutorial on Unit Testing",
+  "autoload": {
+    "psr-4": {
+      "CL\\UnitTestingTutorial\\": "src/",
+      "CL\\UnitTestingTutorialTest\\": "test/"
+    }
+  },
+  "config": {
+    "bin-dir": "bin",
+    "process-timeout": 3600
+  },
+  "keywords": [
+    "Unit testing",
+    "PhpUnit",
+    "DbUnit"
+  ],
+  "require": {
+    "php": ">=7.1",
+    "ext-pdo": "*",
+    "ext-pdo_mysql": "*"
+  },
+  "require-dev": {
+    "ext-dom": "*",
+    "ext-json": "*",
+    "ext-tokenizer": "*",
+    "phpunit/phpunit": "^7",
+    "phpunit/dbunit": "^4"
+  }
 }

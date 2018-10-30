@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace CL\UnitTestingTutorialTest;
 
 use CL\UnitTestingTutorial\AbstractDbAdapter;
@@ -27,13 +30,15 @@ class AbstractDbAdapterTest extends TestCase
 
     public function testClassImplementsDbAdapterInterface()
     {
-    	$this->assertInstanceOf('\CL\UnitTestingTutorial\DbAdapterInterface', $this->instance);
+        $this->assertInstanceOf(
+            '\CL\UnitTestingTutorial\DbAdapterInterface', $this->instance
+        );
     }
 
     public function testFoo()
     {
-    	$actual = $this->instance->foo('test', 'ok');
-    	$this->assertSame('test ok', $actual);
+        $actual = $this->instance->foo('test', 'ok');
+        $this->assertSame('test ok', $actual);
     }
 
     public function testFoo2()

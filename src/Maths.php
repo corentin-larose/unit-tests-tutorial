@@ -23,13 +23,13 @@ class Maths
     }
 
     /**
-     * @param numeric $a
-     * @param numeric $b
+     * @param numeric $multiplicand
+     * @param numeric $multiplier
      *
      * @return numeric
      */
-    public function multiply($a, $b)
+    public function multiply($multiplicand, $multiplier)
     {
-        return $a * $b;
+        return $multiplicand * $multiplier;
     }
 }

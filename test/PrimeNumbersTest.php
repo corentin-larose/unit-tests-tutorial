@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace CL\UnitTestingTutorialTest;
 
 use CL\UnitTestingTutorial\PrimeNumbers;
@@ -8,9 +11,10 @@ class PrimeNumbersTest extends AbstractDbUnit
     /**
      * @var array
      */
-    protected static $fixtures = [
-        '/unit_tests_tutorial.xml',
-    ];
+    protected static $fixtures
+        = [
+            '/unit_tests_tutorial.xml',
+        ];
 
     /**
      * @var PrimeNumbers
@@ -28,7 +32,15 @@ class PrimeNumbersTest extends AbstractDbUnit
 
     public function tearDown(): void
     {
-    	$this->instance = null;
+        $this->instance = null;
+    }
+
+    /**
+     * @covers \CL\UnitTestingTutorial\PrimeNumbers::displayFirstPrimeNumber()
+     */
+    public function testDisplayFirstPrimeNumber()
+    {
+        $this->expectOutputString('1');
     }
 
     /**
