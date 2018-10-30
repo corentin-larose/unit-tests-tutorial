@@ -4,10 +4,7 @@ namespace CL\UnitTestingTutorial;
 
 class PrimeNumbers extends AbstractDbAdapter
 {
-    /**
-     * @return integer
-     */
-    public function displayRandomPrimeNumber(): int
+    public function displayRandomPrimeNumber(): void
     {
         $stmt = $this->dbAdapter
             ->prepare(
