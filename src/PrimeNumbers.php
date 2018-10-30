@@ -15,7 +15,7 @@ class PrimeNumbers extends AbstractDbAdapter
             );
         $stmt->execute();
 
-        return (integer)$stmt->fetch(\PDO::FETCH_COLUMN, 0);
+        echo (integer)$stmt->fetch(\PDO::FETCH_COLUMN, 0);
     }
 
     /**
