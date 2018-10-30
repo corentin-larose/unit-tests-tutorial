@@ -1,10 +1,13 @@
 <?php
 namespace CL\UnitTestingTutorialTest;
 
-abstract class AbstractDbUnit extends \PHPUnit_Extensions_Database_TestCase
+use PHPUnit\DbUnit\DataSet\CompositeDataSet;
+use PHPUnit\DbUnit\TestCase;
+
+abstract class AbstractDbUnit extends TestCase
 {
     /**
-     * @var \PHPUnit_Extensions_Database_DB_DefaultDatabaseConnection
+     * @var \PHPUnit\DbUnit\Database\DefaultConnection
      */
     private $conn = null;
 
@@ -19,7 +22,7 @@ abstract class AbstractDbUnit extends \PHPUnit_Extensions_Database_TestCase
     private static $pdo = null;
 
     /**
-     * @return PHPUnit_Extensions_Database_DB_DefaultDatabaseConnection
+     * @return \PHPUnit\DbUnit\Database\DefaultConnection
      */
     final public function getConnection()
     {
@@ -29,7 +32,7 @@ abstract class AbstractDbUnit extends \PHPUnit_Extensions_Database_TestCase
                 self::$pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
             }
             $this->conn = $this->createDefaultDBConnection(self::$pdo, $GLOBALS['DB_DBNAME']);
-            
+
             // TODO: create database
         }
 
@@ -37,7 +40,7 @@ abstract class AbstractDbUnit extends \PHPUnit_Extensions_Database_TestCase
     }
 
     /**
-     * @return \PHPUnit_Extensions_Database_DataSet_CompositeDataSet
+     * @return \PHPUnit\DbUnit\DataSet\CompositeDataSet
      */
     public function getDataSet()
     {
@@ -47,7 +50,7 @@ abstract class AbstractDbUnit extends \PHPUnit_Extensions_Database_TestCase
             $datasets[] = $this->createMySQLXMLDataSet($GLOBALS['DB_FIXTURES_DIR'] . $fixture);
         }
 
-        $compositeDataSet = new \PHPUnit_Extensions_Database_DataSet_CompositeDataSet($datasets);
+        $compositeDataSet = new CompositeDataSet($datasets);
 
         return $compositeDataSet;
     }

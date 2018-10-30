@@ -2,8 +2,9 @@
 namespace CL\UnitTestingTutorialTest;
 
 use CL\UnitTestingTutorial\Maths;
+use PHPUnit\Framework\TestCase;
 
-class MathsTest extends \PHPUnit_Framework_TestCase
+class MathsTest extends TestCase
 {
     /**
      * @var Maths
@@ -57,19 +58,13 @@ class MathsTest extends \PHPUnit_Framework_TestCase
         $this->instance->divide(3, 0);
     }
 
-    public function testDivideThrowsInvalidArgumentExceptionOnDivisionByZeroAnotherWay()
-    {
-        $this->setExpectedException('\InvalidArgumentException', "You can't divide by zero.");
-        $this->instance->divide(3, 0);
-    }
-
     public function testMultiply()
     {
         $this->markTestIncomplete();
     }
 
     /**
-     * @expectedException PHPUnit_Framework_Error_Warning
+     * @expectedException \PHPUnit\Framework\Error\Warning
      */
     public function testPhpWarningOnDivisionByZero()
     {

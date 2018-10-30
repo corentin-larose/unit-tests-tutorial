@@ -17,7 +17,7 @@ class PrimeNumbersTest extends AbstractDbUnit
      */
     protected $instance;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->getDatabaseTester()->setDataSet($this->getDataSet());
         $this->getDatabaseTester()->onSetUp();
@@ -26,7 +26,7 @@ class PrimeNumbersTest extends AbstractDbUnit
         $this->instance->setDbAdapter($this->getConnection()->getConnection());
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
     	$this->instance = null;
     }

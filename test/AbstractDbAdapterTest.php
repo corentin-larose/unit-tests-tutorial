@@ -2,8 +2,9 @@
 namespace CL\UnitTestingTutorialTest;
 
 use CL\UnitTestingTutorial\AbstractDbAdapter;
+use PHPUnit\Framework\TestCase;
 
-class AbstractDbAdapterTest extends \PHPUnit_Framework_TestCase
+class AbstractDbAdapterTest extends TestCase
 {
     /**
      * @var Wrapper
