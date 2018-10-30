@@ -14,7 +14,7 @@ class PrimeNumbers extends AbstractDbAdapter
      *
      * @param $dbAdapter
      */
-    public function __construct($dbAdapter): void
+    public function __construct($dbAdapter)
     {
         $this->dbAdapter = $dbAdapter;
     }
