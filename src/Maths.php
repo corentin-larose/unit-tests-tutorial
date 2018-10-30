@@ -22,6 +22,23 @@ class Maths
         return (float)($dividend / $denominator);
     }
 
+
+    /**
+     * @param  numeric $dividend
+     * @param  numeric $denominator
+     *
+     * @throws \InvalidArgumentException
+     * @return int
+     */
+    public function modulo($dividend, $denominator): int
+    {
+        if (0 == $denominator) {
+            throw new \InvalidArgumentException("You can't divide by zero.");
+        }
+
+        return $dividend % $denominator;
+    }
+
     /**
      * @param numeric $multiplicand
      * @param numeric $multiplier

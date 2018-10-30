@@ -86,6 +86,22 @@ class MathsTest extends TestCase
     }
 
     /**
+     * @testWith [8, 3, 2]
+     *           [9, 3, 0]
+     *
+     * @param integer $dividend
+     * @param integer $denominator
+     * @param integer $expectedQuotient
+     */
+    public function testModulo($dividend, $denominator, $expectedQuotient)
+    {
+        $actualQuotient = $this->instance->modulo($dividend, $denominator);
+
+        $this->assertInternalType('int', $actualQuotient);
+        $this->assertSame($expectedQuotient, $actualQuotient);
+    }
+
+    /**
      * @covers \CL\UnitTestingTutorial\Maths::multiply()
      * @dataProvider multiplyDataProvider
      *
