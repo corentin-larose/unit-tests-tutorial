@@ -22,7 +22,6 @@ class Maths
         return (float)($dividend / $denominator);
     }
 
-
     /**
      * @param  numeric $dividend
      * @param  numeric $denominator

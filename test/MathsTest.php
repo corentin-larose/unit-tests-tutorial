@@ -73,10 +73,11 @@ class MathsTest extends TestCase
         $this->instance->divide(3, 0);
     }
 
-
     public function testDivideThrowsInvalidArgumentExceptionOnDivisionByZeroAnotherWay()
     {
         $this->expectException(\InvalidArgumentException::class);
+        $this->expectExceptionMessage("You can't divide by zero.");
+
         $this->instance->divide(3, 0);
     }
 

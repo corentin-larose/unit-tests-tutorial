@@ -16,7 +16,7 @@
     </filter>
 
     <php>
-        <var name="DB_FIXTURES_DIR" value="_fixtures"/>
+        <var name="DB_FIXTURES_DIR" value="test/_fixtures"/>
 
         <var name="DB_DBNAME" value="test"/>
         <var name="DB_DSN" value="mysql:dbname=test;host=localhost"/>
