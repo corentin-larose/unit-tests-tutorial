@@ -7,9 +7,15 @@ class PrimeNumbers extends AbstractDbAdapter
     /**
      * @return integer
      */
-    public function displayFirstPrimeNumber(): int
+    public function displayRandomPrimeNumber(): int
     {
-        echo 1;
+        $stmt = $this->dbAdapter
+            ->prepare(
+                'SELECT MAX(prime_number) FROM unit_tests_tutorial LIMIT 1'
+            );
+        $stmt->execute();
+
+        return (integer)$stmt->fetch(\PDO::FETCH_COLUMN, 0);
     }
 
     /**

@@ -36,11 +36,12 @@ class PrimeNumbersTest extends AbstractDbUnit
     }
 
     /**
-     * @covers \CL\UnitTestingTutorial\PrimeNumbers::displayFirstPrimeNumber()
+     * @covers \CL\UnitTestingTutorial\PrimeNumbers::displayRandomPrimeNumber()
      */
-    public function testDisplayFirstPrimeNumber()
+    public function testDisplayRandomPrimeNumber()
     {
-        $this->expectOutputString('1');
+        $this->expectOutputRegex('/[0-9]+/');
+        $this->instance->displayRandomPrimeNumber();
     }
 
     /**

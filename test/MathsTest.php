@@ -80,7 +80,7 @@ class MathsTest extends TestCase
         $this->instance->divide(3, 0);
     }
 
-    public function testincompleteTest()
+    public function testIncompleteTest()
     {
         $this->markTestIncomplete();
     }
