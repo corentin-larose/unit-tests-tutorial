@@ -2,7 +2,7 @@
 
 namespace CL\UnitTestingTutorial;
 
-class PrimeNumbers extends AbstractDbAdapter
+class PrimeNumbers
 {
     /**
      * @var
