@@ -11,7 +11,7 @@ class PrimeNumbers extends AbstractDbAdapter
     {
         $stmt = $this->dbAdapter
             ->prepare(
-                'SELECT MAX(prime_number) FROM unit_tests_tutorial ORDER BY RAND() LIMIT 1'
+                'SELECT prime_number FROM unit_tests_tutorial ORDER BY RAND() LIMIT 1'
             );
         $stmt->execute();
 
