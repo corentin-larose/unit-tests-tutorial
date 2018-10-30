@@ -26,6 +26,7 @@ class MathsTest extends TestCase
             'scientific_notation' => [1.2e3, 3, 1.2e3 / 3],
         ];
     }
+
     /**
      * @see multiplyTest
      * @return ArrayIterator
@@ -65,6 +66,7 @@ class MathsTest extends TestCase
     }
 
     /**
+     * @covers \CL\UnitTestingTutorial\Maths::divide()
      * @expectedException \InvalidArgumentException
      * @expectedExceptionMessage You can't divide by zero.
      */
@@ -73,6 +75,9 @@ class MathsTest extends TestCase
         $this->instance->divide(3, 0);
     }
 
+    /**
+     * @covers \CL\UnitTestingTutorial\Maths::divide()
+     */
     public function testDivideThrowsInvalidArgumentExceptionOnDivisionByZeroAnotherWay()
     {
         $this->expectException(\InvalidArgumentException::class);

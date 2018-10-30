@@ -4,6 +4,21 @@ namespace CL\UnitTestingTutorial;
 
 class PrimeNumbers extends AbstractDbAdapter
 {
+    /**
+     * @var
+     */
+    protected $dbAdapter;
+
+    /**
+     * PrimeNumbers constructor.
+     *
+     * @param $dbAdapter
+     */
+    public function __construct($dbAdapter): void
+    {
+        $this->dbAdapter = $dbAdapter;
+    }
+
     public function displayRandomPrimeNumber(): void
     {
         $stmt = $this->dbAdapter
