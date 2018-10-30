@@ -5,5 +5,5 @@
 .settings/
 bin/
 composer.lock
-phpunit.xml.dist
+phpunit.xml
 vendor/
